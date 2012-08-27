@@ -1,44 +1,48 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Game of Life</title>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <script src="js/life.js"></script>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="viewport" content="width=420; user-scalable=1;">
+
+	<title>Game of Life</title>
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
+	<script src="js/life.js"></script>
 </head>
 <body>
-<div id="main">
-	<h1>Game of Life</h1>
-	<h2>Nate Schulz</h2>
-	<form>
-		<label for="sizeSelect">Neighborhood Size</label>
-		<select id="sizeSelect" name="sizeSelect">
-			<option value="3">9</option>
-			<option value="4">16</option>
-			<option value="5" selected>25</option>
-			<option value="6">36</option>
-			<option value="7">49</option>
-		</select>
-		houses
-		
-		<div class="checkboxWithLabel">
-			<label for="theCheckbox"><input type="checkbox" id="theCheckbox" checked>Use Provided Sample Data</label>
+	<div id="main">
+		<h1>Game of Life</h1>
+		<h2>Nate Schulz</h2>
+		<form>
+			<label for="sizeSelect">Neighborhood Size</label>
+			<select id="sizeSelect" name="sizeSelect">
+				<option value="3">9</option>
+				<option value="4">16</option>
+				<option value="5" selected>25</option>
+				<option value="6">36</option>
+				<option value="7">49</option>
+			</select>
+			houses
+			
+			<div class="checkboxWithLabel">
+				<label for="theCheckbox"><input type="checkbox" id="theCheckbox" checked>Use Provided Sample Data</label>
+			</div>
+			
+		</form>
+		<h2>Generation One</h2>
+		<div id="genOne" class="genBox">
+			
 		</div>
-		
-	</form>
-	<h2>Generation One</h2>
-	<div id="genOne" class="genBox">
-		
+		<h2>Generation Two</h2>
+		<div id="genTwo" class="genBox">
+			
+		</div>
+		<h2>Generation Three</h2>
+		<div id="genThree" class="genBox">
+			
+		</div>
 	</div>
-	<h2>Generation Two</h2>
-	<div id="genTwo" class="genBox">
-		
-	</div>
-	<h2>Generation Three</h2>
-	<div id="genThree" class="genBox">
-		
-	</div>
-</div>
 	
 	<script>
 		BindEvents();
