@@ -1,0 +1,13 @@
+.genBox {
+	margin: 40px;
+}
+.cell {
+	display: table-cell;
+	padding: 2px 6px;
+}
+
+.cell input {
+	width: 30px;
+	font-size: 20px;
+	text-align: center;
+}
