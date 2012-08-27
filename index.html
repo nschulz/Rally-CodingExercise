@@ -7,6 +7,9 @@
   <script src="js/life.js"></script>
 </head>
 <body>
+<div id="main">
+	<h1>Game of Life</h1>
+	<h2>Nate Schulz</h2>
 	<form>
 		<label for="sizeSelect">Neighborhood Size</label>
 		<select id="sizeSelect" name="sizeSelect">
@@ -17,19 +20,25 @@
 			<option value="7">49</option>
 		</select>
 		houses
-		<label for="theCheckbox"><input type="checkbox" id="theCheckbox">Use Provided Sample Data</label>
+		
+		<div class="checkboxWithLabel">
+			<label for="theCheckbox"><input type="checkbox" id="theCheckbox" checked>Use Provided Sample Data</label>
+		</div>
 		
 	</form>
+	<h2>Generation One</h2>
 	<div id="genOne" class="genBox">
 		
 	</div>
+	<h2>Generation Two</h2>
 	<div id="genTwo" class="genBox">
 		
 	</div>
+	<h2>Generation Three</h2>
 	<div id="genThree" class="genBox">
 		
 	</div>
-
+</div>
 	
 	<script>
 		BindEvents();

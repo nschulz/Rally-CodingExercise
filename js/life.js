@@ -30,14 +30,22 @@ var kVector = {
 
 // Begin Game Object Implementation
 function Game(opts) {
-	if (opts === undefined) opts = 5;
+	var _useProvidedDataset = false;
+	if (opts === undefined) {
+		opts = 5;
+		_useProvidedDataset = true;
+	}
 	
 	this.gen1 = new Generation({ target: kElemGenOne, size: opts, enableLiveCalculations: true });
 	this.gen2 = new Generation({ target: kElemGenTwo, size: opts });
 	this.gen3 = new Generation({ target: kElemGenThree, size: opts });
 	
 	this.gen1._initDataSource();
-	this.gen1.setNeighborhoodData(kTestData);
+
+	if (_useProvidedDataset) {
+		this.gen1.setNeighborhoodData(kTestData);
+	}
+
 	this.gen1._generateInputMatrix();
 	
 	this.gen2.evolveFromGeneration( this.gen1 );
@@ -258,6 +266,9 @@ Generation.prototype = {
 		$ID(this._target).innerHTML = "";
 		$ID(this._target).appendChild( docFrag );
 	},
+	/**
+	  * Basic notification system
+	  */
 	_notifyDescendantsOfUpdate: function() {
 		var desCount = this._descendants.length;
 		for (var i = 0; i < desCount; i++) {
@@ -268,7 +279,6 @@ Generation.prototype = {
 		this._descendants.push( d );
 	},
 	receiveNotificationFromAncestor: function() {
-		console.log("didReceiveNotification");
 		this.evolveFromGeneration( this._ancestor, true );
 	}
 };

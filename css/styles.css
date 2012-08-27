@@ -1,5 +1,22 @@
+body {
+	font-family: Helvetica, Geneva, sans-serif;
+}
+#main {
+	text-align: center;
+	width: 415px;
+	margin: 0 auto;
+}
+label {
+	direction: block;
+	line-height: 24px;
+}
+input[type="checkbox"] {
+	margin: 0px 5px;
+	vertical-align: middle;
+}
 .genBox {
-	margin: 40px;
+	margin: 0 0 40px;
+	display: inline-block;
 }
 .cell {
 	display: table-cell;
